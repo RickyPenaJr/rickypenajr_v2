@@ -1758,7 +1758,7 @@ input, select, textarea {
     pointer-events: none;
     z-index: -1;
     overflow: hidden;
-    opacity: 1;
+    opacity: 0;
     transition: opacity 2.5s ease-in-out;
 }
 
@@ -1767,7 +1767,7 @@ input, select, textarea {
     position: absolute;
     width: 2px;
     height: 20vh; /* Slightly longer lines */
-    background: rgba(255, 255, 255, 0.284);
+    background: rgba(255, 255, 255, 0.260);
     animation: moveLines linear infinite;
     opacity: 0; /* Start invisible */
 	transition: opacity 2.5s ease-in-out;
@@ -1797,13 +1797,25 @@ input, select, textarea {
 /* Initially hide elements */
 body.is-preload #animated-background,
 body.is-preload .line {
-    opacity: 0;
+    opacity: 1;
 }
 
 /* Fade in elements when the page loads */
 body:not(.is-preload) #animated-background,
 body:not(.is-preload) .line {
     opacity: 1;
+}
+
+
+
+
+
+#about-heading {
+    text-align: center; /* Centers the text */
+    margin-left: auto;  /* Ensures equal space on the left */
+    margin-right: auto; /* Ensures equal space on the right */
+    display: block; /* Ensures block-level centering */
+    width: fit-content; /* Only takes up as much width as the text */
 }
 
 
