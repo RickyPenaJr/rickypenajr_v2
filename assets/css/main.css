@@ -1808,8 +1808,6 @@ body:not(.is-preload) .line {
 
 
 
-
-
 #about-heading {
     text-align: center; /* Centers the text */
     margin-left: auto;  /* Ensures equal space on the left */
@@ -1817,5 +1815,6 @@ body:not(.is-preload) .line {
     display: block; /* Ensures block-level centering */
     width: fit-content; /* Only takes up as much width as the text */
 }
+
 
 
