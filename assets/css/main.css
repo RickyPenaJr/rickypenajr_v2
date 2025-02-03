@@ -1747,7 +1747,7 @@ input, select, textarea {
 
 
 
-		/* CSS STYLE TEST 2.1 */
+/* CSS STYLE TEST 2.1 */
 /* Background container for animated vertical lines */
 #animated-background {
     position: fixed;
@@ -1759,7 +1759,7 @@ input, select, textarea {
     z-index: -1;
     overflow: hidden;
     opacity: 1;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 2.5s ease-in-out;
 }
 
 /* Vertical Moving Lines */
@@ -1767,23 +1767,43 @@ input, select, textarea {
     position: absolute;
     width: 2px;
     height: 20vh; /* Slightly longer lines */
-    background: rgba(255, 255, 255, 0.384);
+    background: rgba(255, 255, 255, 0.284);
     animation: moveLines linear infinite;
+    opacity: 0; /* Start invisible */
+	transition: opacity 2.5s ease-in-out;
 }
 
 /* Animation for lines moving downward continuously */
 @keyframes moveLines {
     0% {
-        transform: translateY(-50vh); /* Start slightly above screen */
-        opacity: 0.3;
+        transform: translateY(-20vh); /* Start slightly above screen */
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.3; /* Start appearing */
     }
     50% {
-        opacity: 0.7;
+        opacity: 0.7; /* Fully visible */
+    }
+    80% {
+        opacity: 0.3; /* Start fading out */
     }
     100% {
         transform: translateY(100vh); /* Move down fully */
-        opacity: 0;
+        opacity: 0; /* Disappear at bottom */
     }
+}
+
+/* Initially hide elements */
+body.is-preload #animated-background,
+body.is-preload .line {
+    opacity: 0;
+}
+
+/* Fade in elements when the page loads */
+body:not(.is-preload) #animated-background,
+body:not(.is-preload) .line {
+    opacity: 1;
 }
 
 
