@@ -805,43 +805,62 @@ document.addEventListener("DOMContentLoaded", function () {
 
     createLines(7); // Create animated lines
 
-    // Function to fade out lines smoothly instead of stopping them
-    function fadeOutLines() {
-        animatedBackground.style.opacity = "0.3"; // Lower opacity instead of hiding
+    // Function to hide lines smoothly
+    function hideLines() {
+        animatedBackground.style.opacity = "0"; // Fade out
+        setTimeout(() => {
+            animatedBackground.style.display = "none"; // Hide after fade
+        }, 500);
     }
 
-    // Function to fade in lines when coming back to main page
-    function fadeInLines() {
-        animatedBackground.style.opacity = "1"; // Restore full opacity
+    // Function to show lines smoothly
+    function showLines() {
+        animatedBackground.style.display = "block"; // Show
+        setTimeout(() => {
+            animatedBackground.style.opacity = "1"; // Fade in
+        }, 50);
     }
 
-    // Detect navigation clicks
+    // Fix: Reset lines when re-entering sections that should show them
+    function resetLines() {
+        animatedBackground.style.opacity = "0"; // Fade out
+        setTimeout(() => {
+            createLines(7); // Recreate the lines to fix the glitch
+            showLines(); // Show them smoothly again
+        }, 500);
+    }
+
+    // Hide lines when navigating away from the main section
     document.querySelectorAll("nav ul li a").forEach(link => {
         link.addEventListener("click", function (event) {
             let target = link.getAttribute("href");
 
-            // Keep lines always running, but fade them out for certain sections
-            if (target && target.startsWith("#")) {
-                fadeOutLines();
-                setTimeout(() => fadeInLines(), 1000); // Restore after 1s
+            if (target === "pdfs/Ricardo_Pena_Resume_1.pdf") {
+                return; // Keep lines running for resume link
+            }
+
+            if (target && target !== "#main") {
+                hideLines();
             }
         });
     });
 
-    // Ensure lines fade in when the page loads on #main
+    // Fix: Detect when user leaves and returns from #about (Projects) properly
     window.addEventListener("hashchange", function () {
-        if (window.location.hash === "#main" || window.location.hash === "" || !window.location.hash) {
-            fadeInLines();
+        const hash = window.location.hash;
+
+        if (hash === "#main" || hash === "" || !hash) {
+            resetLines(); // Fix glitch by resetting the lines
         } else {
-            fadeOutLines();
+            hideLines();
         }
     });
 
-    // Ensure lines are visible at page load
+    // Ensure lines are visible when loading the page on #main
     if (window.location.hash === "#main" || window.location.hash === "" || !window.location.hash) {
-        fadeInLines();
+        showLines();
     } else {
-        fadeOutLines();
+        hideLines();
     }
 });
 
