@@ -1,0 +1,873 @@
+<!-----
+Creator: Ricky Peña Jr.
+GitHub Account: (iRickyJr) 
+Purpose: Display Portfolio
+
+
+
+VERSION: 6.1.2 - Last Updated: Feb. 03, 2025
+
+
+
+
+---Version Guide Example---
+
+Example:
+Version 6.0 → A major version with new core functionality or architecture changes.
+Version 6.1 → An update adding new features while keeping the core system the same.
+Version 6.1.1 → A small fix or improvement without adding new features
+
+
+----->
+
+
+
+
+
+
+<!-----BEGINNING DOCUMENT----->
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Ricky Peña Jr.</title>
+    <link rel="icon" href="images/Logo.png" sizes="32x32">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+   
+ 
+ 
+	
+ <script>		
+        document.addEventListener("DOMContentLoaded", function () {
+            const phrases = [
+                "An IT Consultant",
+                "A Data Analyst",
+                "An AI & ML Enthusiast"
+				];
+            let i = 0;
+            const dynamicText = document.getElementById("dynamic-text");
+
+            function typeEffect() {
+                let currentPhrase = phrases[i];
+                let j = 0;
+                dynamicText.innerHTML = "";
+
+                function typeCharacter() {
+                    if (j < currentPhrase.length) {
+                        dynamicText.innerHTML += currentPhrase.charAt(j);
+                        j++;
+                        setTimeout(typeCharacter, 100);
+                    } else {
+                        setTimeout(() => deleteEffect(currentPhrase.length), 2000);
+                    }
+                }
+
+                function deleteEffect(length) {
+                    if (length > 0) {
+                        dynamicText.innerHTML = currentPhrase.substring(0, length - 1);
+                        setTimeout(() => deleteEffect(length - 1), 50);
+                    } else {
+                        i = (i + 1) % phrases.length;
+                        setTimeout(typeEffect, 500);
+                    }
+                }
+
+                typeCharacter();
+            }
+
+            typeEffect();
+        });
+    </script>
+</head>
+<body class="is-preload">
+    
+    <!-- Wrapper -->
+    <div id="wrapper">
+        
+        <!-- Header -->
+        <header id="header">
+            <div class="content">
+                <div class="inner">
+                    <h1>Ricky Peña Jr.</h1>
+					<p>Welcome to my Data Science Portfolio</p>
+                    <!--TEXT EFFECT START-->
+                    <p>I'm <span id="dynamic-text" class="u-text-palette-3-base"></span></p>
+                    <!--TEXT EFFECT END-->
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#intro">About Me</a></li>
+                    <li><a href="#work">Experience</a></li>
+                    <li><a href="#about">Projects</a></li>
+                    <li><a href="#certifications">Certificates</a></li>
+                    <li><a href="pdfs/Ricardo_Pena_Resume_1.pdf" target="_blank">Resume</a></li>
+                </ul>
+            </nav>
+            <div class="inner">
+                <ul class="icons">
+                    <li><a href="tel:2819758340" class="fas fa-phone"></a></li>
+                    <li><a href="mailto:rickypenajr@gmail.com" target="_blank" class="fas fa-envelope"></a></li>
+                    <li><a href="https://www.linkedin.com/in/rickypenajr/" target="_blank" class="icon brands fa-linkedin"></a></li>
+                    <li><a href="https://github.com/iRickyJr" target="_blank" class="icon brands fa-github"></a></li>
+                    <li><a href="linkhere" target="_blank" class="icon fa-gem"></a></li>
+                </ul>
+            </div>
+        </header>
+
+
+
+
+
+
+
+
+		
+				<!----- MAIN ----->
+					<div id="main">
+
+
+
+
+						<!----- ABOUT ME ----->
+						<article id="intro">
+							<h2 class="major" style="margin-left: 200px;">About Me</h2>
+							<div style="text-align: center;">
+								<img src="images/headshot.jpg" alt="" width="50%" />
+							</div>
+							<br>
+
+
+							
+							<h3>Welcome!</h3>
+							<!--<p><b>Welcome to My Portfolio!</b></p> ---> 
+
+							<p> I discovered my passion for Data Science while double majoring in MIS & Finance at UH's Bauer College of Business, especially during my internship at Tenaris, an Oil & Gas Manufacturer. There, I worked with Python, R Studio, and Power BI to enhance auditing processes and uncover data trends, reinforcing the power of data-driven insights.
+							</p>
+
+							<p> My MIS background gives me technical expertise, while my Finance studies strengthen my analytical mindset—together, they fuel my interest in Data Science, Business Intelligence, and analytics. Beyond academics, I’m passionate about AI, Machine Learning, and sports, always eager to learn and apply my skills to real-world challenges.
+							</p>
+
+							<p> I'm excited to share my work—feel free to explore! &nbsp;🚀
+							</p>
+
+						</article>
+
+
+
+
+
+
+						<!-- Experience -->
+						<article id="work">
+							<h2 class="major">Experience</h2>
+
+
+							<!-- PROTIVTI-->
+							<div class="card">
+								<div class="container">
+									<br>
+									<img src="images/protiviti_logo.png" width=60%>
+									<br>
+									<font size="+3">IT Consulting Intern - <a href="https://www.protiviti.com/" target="_blank">Protiviti</a></font>
+									<p><b>Summer 2024</b>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Houston, TX</p>
+									<p>Enter Text Here...
+									</p>
+								</div>
+							</div>
+							<br>
+							
+
+							<!-- TENARIS-->
+							<div class="card">
+								<div class="container">
+									<br>
+									<img src="images/tenaris_logo.png" width=60%>
+									<br>
+									<font size="+3">Audit Data Science Intern - <a href="https://www.tenaris.com/" target="_blank">Tenaris</a></font>
+									<p><b>Spring 2024 - Summer 2024</b>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Houston, TX</p>
+									<p>Enter Text here...
+									</p>
+									<ul class="actions">
+										<li><a href="linkhere" target="_blank" class="button small">View Project</a></li>
+									</ul>
+								</div>
+							</div>
+							<br>
+
+
+							<!-- HPE-->
+							<div class="card">
+								<div class="container">
+									<br>
+									<img src="images/hpe_logo.png" width=65%>
+									<br>
+									<font size="+3">IT Student Consultant - <a href="https://www.hpe.com/" target="_blank">HPE</a></font>
+									<p><b>Spring 2024</b>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Spring, TX</p>
+									<p>Enter Text Here...
+									</p>
+									<ul class="actions">
+										<li><a href="linkhere" target="_blank" class="button small">View Project</a></li>
+									</ul>
+								</div>
+							</div>
+							<br>
+
+
+							<!-- Texas Bay Credit Union-->
+							<div class="card">
+								<div class="container">
+									<br>
+									<img src="images/texasbay_logo.png" width=50%>
+									<br>
+									<br>
+									<font size="+3">Finance Intern - <a href="https://www.texasbaycu.org/" target="_blank">Texas Bay Credit Union</a></font>
+									<p><b>Summer 2023</b>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Houston, TX&nbsp;&nbsp;/&nbsp;&nbsp;Richmond, TX</p>
+									<p>Enter Text Here...
+									</p>
+									<ul class="actions">
+										<li><a href="linkhere" target="_blank" class="button small">View Project</a></li>
+									</ul>
+								</div>
+							</div>
+							<br>
+
+							<!-- Eagle Tech-->
+							<div class="card">
+								<div class="container">
+									<br>
+									<img src="images/eagle_logo.png" width=45%>
+									<br>
+									<br>
+									<font size="+3">Business Analyst - <a href="https://www.eagletechsupply.com" target="_blank">Eagle Tech Supply</a></font>
+									<p><b>Spring 2023</b>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Houston, TX</p>
+									<p>Enter Text Here...
+									</p>
+									<ul class="actions">
+										<li><a href="linkhere" target="_blank" class="button small">View Project</a></li>
+									</ul>
+								</div>
+							</div>
+						</article>
+
+
+
+
+
+
+
+
+
+					<!---------------- PROJECTS ---------------->
+							<article id="about">
+								<h2 class="major">Projects</h2>
+								<p>Pursuing my passion for Data Science through projects is something that has allowed to me drastically improve my technical skills, and 
+									competing in various competitions allows me to test those skills against others. Below are various projects and competitions
+									I have worked on.
+								</p>
+								<h4>Projects</h4>
+
+
+
+						<!-- PROJECT #1 -->
+								<div class="card">
+									<div class="centercontainer">
+										<font size="+2"><b>📱 &nbsp; Project 1</b></font><br>
+										<font size="-0.5">Enter Text Here...<b><a href="linkhere"
+													target="_blank"><br>View Project</a></b></font>
+									</div>
+								</div>
+								<br>
+
+
+
+
+								
+						<!-- PROJECT #2 -->
+								<div class="card">
+									<div class="centercontainer">
+										<font size="+2"><b>💻 &nbsp; Project 2</b></font><br>
+										<font size="-0.5">Enter Text Here....<b><a href="linkhere"
+													target="_blank"><br>View Project</a></b></font>
+									</div>
+								</div>
+								<br>
+
+
+						<!-- PROJECT #3 -->
+								<div class="card">
+									<div class="centercontainer">
+										<font size="+2"><b>🎮 &nbsp; Project 3</b></font><br>
+										<font size="-0.5">Enter Text Here... <b><a href="linkhere"
+													target="_blank"><br>View Project</a></b></font>
+									</div>
+								</div>
+								<br>
+							
+							
+							
+							
+						<!-- PROJECT #4 -->
+								<div class="card">
+									<div class="centercontainer">
+										<font size="+2"><b>📚 &nbsp; Project 4</b></font><br>
+										<font size="-0.5">Enter Text Here...<b><a href="linkhere"
+													target="_blank"><br>View Project</a></b></font>
+									</div>
+								</div>
+								<br>
+
+
+
+						<!-- PROJECT #5 -->
+								<div class="card">
+									<div class="centercontainer">
+										<font size="+2"><b>🦸 &nbsp; My First Portfolio</b></font><br>
+										<font size="-0.5">Enter Text Here...<b><a href="https://irickyjr.github.io/"
+													target="_blank"><br>View Project</a></b></font>
+									</div>
+								</div>
+								<br>
+
+
+
+
+
+
+						<!------ COMPETITIONS ------->
+								<h4>Competitions</h4>
+
+
+
+
+
+
+							<!-- COMPETITION 1-->
+								<div class="card">
+									<div class="centercontainer">
+										<font size="+2"><b>💾 &nbsp; Competition #1</b></font><br>
+										<font size="-0.5"><i>Semester, Placement</i><br>Enter Text Here.... <b><a
+													href="linkhere"
+													target="_blank"><br>View Project</a></b>
+										</font>
+									</div>
+								</div>
+								<br>
+
+
+
+							<!-- COMPETITION 2-->
+								<div class="card">
+									<div class="centercontainer">
+										<font size="+2"><b>💾 &nbsp; Competition #2</b></font><br>
+										<font size="-0.5"><i>Semester, Placement</i><br>Enter Text Here...<b><a
+													href="linkhere"
+													target="_blank"><br>View Project</a></b>
+										</font>
+									</div>
+								</div>
+								<br>
+								
+							</article>
+
+
+
+
+
+
+
+
+					<!--------------CERTIFICATIONS ---------------->
+						<article id="certifications">
+							<h2 class="major">Certifications</h2>
+							<p>Learning beyond the classroom has always been important to me, and online courses have been a great way to expand my technical skills. Through these courses, I’ve gained hands-on experience in various tools and concepts, earning certifications along the way. Here’s a collection of what I’ve accomplished.
+							<ul class="actions">
+								<li><a href="https://www.linkedin.com/in/rickypenajr/details/certifications/" target="_blank" class="button small">Proof of Certifications</a></li>
+							</ul>
+							<h4>Google Certificate</h4>
+
+
+
+
+
+						<!--CERTIFICATION 1-->
+							<div class="card">
+								<div class="container">
+									<br>
+									<img src="images/Google__G__Logo.svg.png" width=10%>
+									<br>
+									<font size="+3">Google Data Analytics</font>
+									<p> This certificate is an introductory course to learning key analytical skills and covers SQL, R, Tableau, and Excel.
+									</p>
+									<ul class="actions">
+										<li><a href="linkhere" target="_blank" class="button small">View Certificate</a></li>
+									</ul>
+								</div>
+							</div>
+							<br>
+
+
+							
+							<!-- For Now
+							<h4>IBM Certificate</h4>
+							<div class="card">
+								<div class="container">
+									<br>
+									<img src="images/IBM.avif" width=20%>
+									<br>
+									<font size="+3">IBM AI Engineering Professional Certificate</font>
+									<p>This certificate teaches how to provide business insights from big data using machine learning and deep learning techniques.
+									</p>
+									<ul class="actions">
+										<li><a href="https://www.coursera.org/professional-certificates/ai-engineer" target="_blank" class="button small">View Certificate</a></li>
+									</ul>
+								</div>
+							</div>
+							<br> -->
+
+
+
+
+							<!-----CERTIFICATION 2----->
+							<h4>Snowflake Certificate</h4>
+							<div class="card">
+								<div class="container">
+									<br>
+									<img src="images/SNOW-35164165.png" width=13%>
+									<br>
+									<font size="+3">Hands On Essentials - Data Warehouse</font>
+									<p>This certificate teaches various data skills such as data warehousing, database development, JSON, Snowflake, and SQL.
+									</p>
+									<ul class="actions">
+										<li><a href="linkhere" target="_blank" class="button small">View Certificate</a></li>
+									</ul>
+								</div>
+							</div>
+							<br>
+							
+							
+							<!-----CERTIFICATION 3----->
+							<h4>LinkedIn Certificates</h4>
+							<div class="card">
+								<div class="container">
+									<br>
+									<img src="images/link.png" width=11%>
+									<br>
+									<font size="+3">Python for Data Science Essential Training Part 1</font>
+									</p>
+									<ul class="actions">
+										<li><a href="linkhere" target="_blank" class="button small">View Certificate</a></li>
+									</ul>
+								</div>
+							</div>
+						</article>
+
+
+
+
+
+
+
+
+
+
+						<!--------- ELEMENTS ---------->
+							<article id="elements">
+								<h2 class="major">Elements</h2>
+
+								<section>
+									<h3 class="major">Text</h3>
+									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
+									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
+									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+									<hr />
+									<h2>Heading Level 2</h2>
+									<h3>Heading Level 3</h3>
+									<h4>Heading Level 4</h4>
+									<h5>Heading Level 5</h5>
+									<h6>Heading Level 6</h6>
+									<hr />
+									<h4>Blockquote</h4>
+									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
+									<h4>Preformatted</h4>
+									<pre><code>i = 0;
+
+while (!deck.isInOrder()) {
+    print 'Iteration ' + i;
+    deck.shuffle();
+    i++;
+}
+
+print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
+								</section>
+
+								<section>
+									<h3 class="major">Lists</h3>
+
+									<h4>Unordered</h4>
+									<ul>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
+									</ul>
+
+									<h4>Alternate</h4>
+									<ul class="alt">
+										<li>Dolor pulvinar etiam.</li>
+										<li>Sagittis adipiscing.</li>
+										<li>Felis enim feugiat.</li>
+									</ul>
+
+									<h4>Ordered</h4>
+									<ol>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis viverra.</li>
+										<li>Felis enim feugiat.</li>
+										<li>Dolor pulvinar etiam.</li>
+										<li>Etiam vel felis lorem.</li>
+										<li>Felis enim et feugiat.</li>
+									</ol>
+									<h4>Icons</h4>
+									<ul class="icons">
+										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+									</ul>
+
+									<h4>Actions</h4>
+									<ul class="actions">
+										<li><a href="#" class="button primary">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions stacked">
+										<li><a href="#" class="button primary">Default</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3 class="major">Table</h3>
+									<h4>Default</h4>
+									<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+
+									<h4>Alternate</h4>
+									<div class="table-wrapper">
+										<table class="alt">
+											<thead>
+												<tr>
+													<th>Name</th>
+													<th>Description</th>
+													<th>Price</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Item One</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Two</td>
+													<td>Vis ac commodo adipiscing arcu aliquet.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Three</td>
+													<td> Morbi faucibus arcu accumsan lorem.</td>
+													<td>29.99</td>
+												</tr>
+												<tr>
+													<td>Item Four</td>
+													<td>Vitae integer tempus condimentum.</td>
+													<td>19.99</td>
+												</tr>
+												<tr>
+													<td>Item Five</td>
+													<td>Ante turpis integer aliquet porttitor.</td>
+													<td>29.99</td>
+												</tr>
+											</tbody>
+											<tfoot>
+												<tr>
+													<td colspan="2"></td>
+													<td>100.00</td>
+												</tr>
+											</tfoot>
+										</table>
+									</div>
+								</section>
+
+								<section>
+									<h3 class="major">Buttons</h3>
+									<ul class="actions">
+										<li><a href="#" class="button primary">Primary</a></li>
+										<li><a href="#" class="button">Default</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button">Default</a></li>
+										<li><a href="#" class="button small">Small</a></li>
+									</ul>
+									<ul class="actions">
+										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
+										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
+									</ul>
+									<ul class="actions">
+										<li><span class="button primary disabled">Disabled</span></li>
+										<li><span class="button disabled">Disabled</span></li>
+									</ul>
+								</section>
+
+								<section>
+									<h3 class="major">Form</h3>
+									<form method="post" action="#">
+										<div class="fields">
+											<div class="field half">
+												<label for="demo-name">Name</label>
+												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
+											</div>
+											<div class="field half">
+												<label for="demo-email">Email</label>
+												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
+											</div>
+											<div class="field">
+												<label for="demo-category">Category</label>
+												<select name="demo-category" id="demo-category">
+													<option value="">-</option>
+													<option value="1">Manufacturing</option>
+													<option value="1">Shipping</option>
+													<option value="1">Administration</option>
+													<option value="1">Human Resources</option>
+												</select>
+											</div>
+											<div class="field half">
+												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
+												<label for="demo-priority-low">Low</label>
+											</div>
+											<div class="field half">
+												<input type="radio" id="demo-priority-high" name="demo-priority">
+												<label for="demo-priority-high">High</label>
+											</div>
+											<div class="field half">
+												<input type="checkbox" id="demo-copy" name="demo-copy">
+												<label for="demo-copy">Email me a copy</label>
+											</div>
+											<div class="field half">
+												<input type="checkbox" id="demo-human" name="demo-human" checked>
+												<label for="demo-human">Not a robot</label>
+											</div>
+											<div class="field">
+												<label for="demo-message">Message</label>
+												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Send Message" class="primary" /></li>
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									</form>
+								</section>
+
+							</article>
+
+					</div>
+
+
+
+
+
+
+
+
+				<!--------- FOOTER ---------->
+					<footer id="footer">
+						<p class="copyright">&copy; Ricky Peña Jr. 2025. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!------- BG (Background) -------->
+			<div id="bg"></div>
+
+		<!------- SCRIPTS --------->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Animated Background Lines -->
+<div id="animated-background">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const animatedBackground = document.getElementById("animated-background");
+		const resumeLink = document.querySelector('a[href="pdfs/Ricardo_Pena_Resume_1.pdf"]'); // Select the Resume button
+	
+		function createLines(numLines) {
+			animatedBackground.innerHTML = ""; // Clear old lines
+	
+			for (let i = 0; i < numLines; i++) {
+				let line = document.createElement("div");
+				line.classList.add("line");
+	
+				// Spread lines further apart by using a stepwise approach
+				let leftPosition = i * (100 / numLines) + Math.random() * 5; // Evenly spaced but slightly randomized
+				line.style.left = `${leftPosition}%`;
+	
+				// Random vertical animation speed (8s - 16s)
+				let animationDuration = (Math.random() * 8) + 8;
+				line.style.animationDuration = `${animationDuration}s`;
+	
+				// Random delay so lines don’t all start together (-6s to 0s)
+				let delayTime = Math.random() * 6;
+				line.style.animationDelay = `-${delayTime}s`;
+	
+				animatedBackground.appendChild(line);
+			}
+		}
+	
+		createLines(7); // Adjusted number of lines for better spacing
+	
+		// Function to hide the lines
+		function hideLines() {
+			animatedBackground.style.opacity = "0";
+			setTimeout(() => {
+				animatedBackground.style.display = "none";
+			}, 500);
+		}
+	
+		// Function to show the lines again
+		function showLines() {
+			animatedBackground.style.display = "block";
+			setTimeout(() => {
+				animatedBackground.style.opacity = "1";
+			}, 50);
+		}
+	
+		// Hide lines when clicking a button that is NOT the main page or the Resume link
+		document.querySelectorAll("nav ul li a").forEach(link => {
+			link.addEventListener("click", function (event) {
+				let target = link.getAttribute("href");
+	
+				if (target === "pdfs/Ricardo_Pena_Resume_1.pdf") {
+					// Do nothing (Keep lines running)
+					return;
+				}
+	
+				if (target && target !== "#main") {
+					hideLines();
+				}
+			});
+		});
+	
+		// Detect when user returns to the main page and show the lines again
+		window.addEventListener("hashchange", function () {
+			if (window.location.hash === "#main" || window.location.hash === "" || !window.location.hash) {
+				showLines();
+			}
+		});
+	
+		// Ensure lines are visible when loading the page on #main
+		if (window.location.hash === "#main" || window.location.hash === "" || !window.location.hash) {
+			showLines();
+		} else {
+			hideLines();
+		}
+	});
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+		</body>
+</html>
