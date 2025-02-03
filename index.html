@@ -778,83 +778,81 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 
 <script>
-	document.addEventListener("DOMContentLoaded", function () {
-		const animatedBackground = document.getElementById("animated-background");
-		const resumeLink = document.querySelector('a[href="pdfs/Ricardo_Pena_Resume_1.pdf"]'); // Select the Resume button
-	
-		function createLines(numLines) {
-			animatedBackground.innerHTML = ""; // Clear old lines
-	
-			for (let i = 0; i < numLines; i++) {
-				let line = document.createElement("div");
-				line.classList.add("line");
-	
-				// Spread lines further apart by using a stepwise approach
-				let leftPosition = i * (100 / numLines) + Math.random() * 5; // Evenly spaced but slightly randomized
-				line.style.left = `${leftPosition}%`;
-	
-				// Random vertical animation speed (8s - 16s)
-				let animationDuration = (Math.random() * 8) + 8;
-				line.style.animationDuration = `${animationDuration}s`;
-	
-				// Random delay so lines don’t all start together (-6s to 0s)
-				let delayTime = Math.random() * 6;
-				line.style.animationDelay = `-${delayTime}s`;
-	
-				animatedBackground.appendChild(line);
-			}
-		}
-	
-		createLines(7); // Adjusted number of lines for better spacing
-	
-		// Function to hide the lines
-		function hideLines() {
-			animatedBackground.style.opacity = "0";
-			setTimeout(() => {
-				animatedBackground.style.display = "none";
-			}, 500);
-		}
-	
-		// Function to show the lines again
-		function showLines() {
-			animatedBackground.style.display = "block";
-			setTimeout(() => {
-				animatedBackground.style.opacity = "1";
-			}, 50);
-		}
-	
-		// Hide lines when clicking a button that is NOT the main page or the Resume link
-		document.querySelectorAll("nav ul li a").forEach(link => {
-			link.addEventListener("click", function (event) {
-				let target = link.getAttribute("href");
-	
-				if (target === "pdfs/Ricardo_Pena_Resume_1.pdf") {
-					// Do nothing (Keep lines running)
-					return;
-				}
-	
-				if (target && target !== "#main") {
-					hideLines();
-				}
-			});
-		});
-	
-		// Detect when user returns to the main page and show the lines again
-		window.addEventListener("hashchange", function () {
-			if (window.location.hash === "#main" || window.location.hash === "" || !window.location.hash) {
-				showLines();
-			}
-		});
-	
-		// Ensure lines are visible when loading the page on #main
-		if (window.location.hash === "#main" || window.location.hash === "" || !window.location.hash) {
-			showLines();
-		} else {
-			hideLines();
-		}
-	});
+document.addEventListener("DOMContentLoaded", function () {
+    const animatedBackground = document.getElementById("animated-background");
+
+    function createLines(numLines) {
+        animatedBackground.innerHTML = ""; // Clear old lines
+
+        for (let i = 0; i < numLines; i++) {
+            let line = document.createElement("div");
+            line.classList.add("line");
+
+            // Random horizontal position
+            let leftPosition = Math.random() * 100; // Fully randomized
+            line.style.left = `${leftPosition}%`;
+
+            // Random animation speed (8s - 16s)
+            let animationDuration = (Math.random() * 8) + 8;
+            line.style.animationDuration = `${animationDuration}s`;
+
+            // Random delay so lines don’t all start together (-6s to 0s)
+            let delayTime = Math.random() * 6;
+            line.style.animationDelay = `-${delayTime}s`;
+
+            animatedBackground.appendChild(line);
+        }
+    }
+
+    createLines(7); // Create animated lines
+
+    // Function to hide lines smoothly
+    function hideLines() {
+        animatedBackground.style.opacity = "0"; // Fade out
+        setTimeout(() => {
+            animatedBackground.style.display = "none"; // Hide after fade
+        }, 500);
+    }
+
+    // Function to show lines smoothly
+    function showLines() {
+        animatedBackground.style.display = "block"; // Show
+        setTimeout(() => {
+            animatedBackground.style.opacity = "1"; // Fade in
+        }, 50);
+    }
+
+    // Hide lines when navigating away from the main section
+    document.querySelectorAll("nav ul li a").forEach(link => {
+        link.addEventListener("click", function (event) {
+            let target = link.getAttribute("href");
+
+            if (target === "pdfs/Ricardo_Pena_Resume_1.pdf") {
+                return; // Keep lines running for resume link
+            }
+
+            if (target && target !== "#main") {
+                hideLines();
+            }
+        });
+    });
+
+    // Detect when user returns to the main page and show the lines again
+    window.addEventListener("hashchange", function () {
+        if (window.location.hash === "#main" || window.location.hash === "" || !window.location.hash) {
+            showLines();
+        }
+    });
+
+    // Ensure lines are visible when loading the page on #main
+    if (window.location.hash === "#main" || window.location.hash === "" || !window.location.hash) {
+        showLines();
+    } else {
+        hideLines();
+    }
+});
+
 	</script>
-	
 	
 	
 	
