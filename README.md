@@ -1,4 +1,4 @@
-##rickypenajr_v2
+## rickypenajr_v2
 <br>
 This website was the V2 Version of my portfolio
 Link: https://rickypenajr.github.io/rickypenajr_v2/
